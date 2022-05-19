@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-var generateId = require('./plugins/generateId');
-const genreSchema = newSchema([{
+const Schema = mongoose.Schema;
+const genreSchema = new Schema([{
     genreid: {
         type: Number, 
         required: true, 
@@ -12,5 +12,6 @@ const genreSchema = newSchema([{
         Name: String
       },
     }]);
-    genreSchema.plugin(generateId());
-module.exports = mongoose.model('Genre', genreSchema);
+
+    const Genre = mongoose.model('Genre',  genreSchema);
+    module.exports = Genre;

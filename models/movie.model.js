@@ -1,4 +1,6 @@
-var movieSchema = new mongoose.Schema([{ 
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+var movieSchema = new Schema([{ 
     movieid: {
       type: Number, 
       required: true, 
@@ -32,11 +34,11 @@ var movieSchema = new mongoose.Schema([{
         required: true 
      },
      artists: [{
-       type : mongoose.Schema.ObjectId, 
+       type : Schema.ObjectId, 
        ref : 'Actor'
      }],
      genre :[{
-        type : mongoose.Schema.ObjectId, 
+        type : Schema.ObjectId, 
         ref : 'Genre'
 
      }],
@@ -61,6 +63,5 @@ var movieSchema = new mongoose.Schema([{
            unit_price: {type:Number , required:true}
     }],
   }]);
- 
-  movieSchema.plugin(generateId());
-  module.exports = mongoose.model('Movie', movieSchema);
+  const Movie = mongoose.model('Movie', movieSchema);
+  module.exports = Movie;

@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-var generateId = require('./plugins/generateId');
 
-const artistSchema = newSchema([{
+
+const artistSchema = new Schema([{
     id: {
         type: Number, 
         required: true, 
@@ -29,5 +29,7 @@ const artistSchema = newSchema([{
     ref : 'Movie'
   }]
 }]);
-artistSchema.plugin(generateId());
-module.exports = mongoose.model('Artist', artistSchema);
+
+
+const Artist = mongoose.model('Artist', artistSchema);
+module.exports = Artist;

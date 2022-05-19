@@ -1,12 +1,28 @@
-const config = {
-    app: {
-      port: 9000
-    },
-    db: {
-      host: 'localhost',
-      port: 27017,
-      name: 'db'
+
+// mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+
+
+const mongoose = require('mongoose');
+
+// const host = 'localhost';
+// const port = 27017;
+// const name = 'mongodb';
+// const connectionString = `mongodb://${host}:${port}/${name}`;
+const connectionString = `mongodb://127.0.0.1:27017/gssapiServiceName=mongodb`
+
+const connectDB = async () => {
+    try{
+        // mongodb connection string
+        const con = await mongoose.connect(connectionString, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useFindAndModify: false,
+            useCreateIndex: true
+        })
+        console.log(`MongoDB connected : ${con.connection.host}`);
+    }catch(err){
+        console.log(err);
+        process.exit(1);
     }
-   };
-   
-   module.exports = config;
+}
+module.exports = connectDB;
