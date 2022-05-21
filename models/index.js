@@ -19,6 +19,8 @@
 
 
 module.exports = {
+
+
     'Artist' :require('./artist.model'),
     'Genre' : require('./genre.model'),
     'Movie' : require('./movie.model')

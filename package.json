@@ -1,19 +1,15 @@
 {
-  "name": "moviebooking",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.0",
+    "auth-jwt": "^1.0.6",
+    "b2a": "^1.1.2",
+    "bcryptjs": "^2.4.3",
+    "cookie-session": "^2.0.0",
     "cors": "^2.8.5",
     "express": "^4.18.1",
-    "generate-id": "^2.0.1",
-    "mongoose": "^6.3.2"
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.4",
+    "uuid": "^8.3.2",
+    "uuid-token-generator": "^1.0.0",
+    "uuidv4": "^6.2.13"
   }
 }
