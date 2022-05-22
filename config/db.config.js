@@ -4,11 +4,11 @@
 
 const mongoose = require('mongoose');
 
-// const host = 'localhost';
-// const port = 27017;
-// const name = 'mongodb';
-// const connectionString = `mongodb://${host}:${port}/${name}`;
-const connectionString = `mongodb://127.0.0.1:27017/gssapiServiceName=mongodb`
+ const host = 'localhost';
+ const port = 27017;
+ const name = 'moviesdb';
+ const connectionString = `mongodb://${host}:${port}/${name}`;
+// const connectionString = `mongodb://127.0.0.1:27017/gssapiServiceName=moviesdb`
 
 const connectDB = async () => {
     try{

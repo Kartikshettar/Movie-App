@@ -27,7 +27,7 @@ require('./routes/user.routes')(app);
 
 
 const options = {
-  origin: 'http://localhost:3000/api',
+  origin: 'http://localhost:8085/api',
   }
   app.use(cors(options))
   app.use(express.json());
@@ -48,21 +48,8 @@ app.use(
  app.get("/", cors(options), function (req, res) {
   res.json({ message: "Welcome to Upgrad Movie booking application development." });
 })
+app.get('/artist', require('./routes/artist.routes'))
+app.get('/genre', require('./routes/genre.routes'))
+app.get('/movie', require('./routes/movie.routes'))
 
-function initial() {
-  Role.create({
-    id: 1,
-    name: "user",
-  });
-
-  Role.create({
-    id: 2,
-    name: "moderator",
-  });
-
-  Role.create({
-    id: 3,
-    name: "admin",
-  });
-}
-app.listen(3000);
+app.listen(8085);

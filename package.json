@@ -10,6 +10,7 @@
     "mongoose": "^6.3.4",
     "uuid": "^8.3.2",
     "uuid-token-generator": "^1.0.0",
-    "uuidv4": "^6.2.13"
+    "uuidv4": "^6.2.13",
+    "proxy":"http://localhost:8085"
   }
 }

@@ -1,27 +1,14 @@
-// var express = require('Express');
-// var app = express();
-// var server = require('../server');
-// const connectDB = require('../config/db.config');
-
-// connectDB();
-// const db = {};
-// db.url = connectDB.url;
-//  mongoose = db.mongoose;
-// db.artist = require('../models/artist.model')(mongoose);
-// db.genre= require("../models/genre.model")(mongoose);
-// db.movie= require("../models/movie.model")(mongoose);
-
-
-// app.use('/server',server);
-// app.listen(9000);
+const movie  = require('./movie.model');
+const genre = require('./genre.model');
+const artist = require('./artist.model');
+const user = require('./user.model');
 
 
 
+ module.exports = {
+     movie,
+     genre,
+     artist,
+     user
+ }
 
-module.exports = {
-
-
-    'Artist' :require('./artist.model'),
-    'Genre' : require('./genre.model'),
-    'Movie' : require('./movie.model')
-};
